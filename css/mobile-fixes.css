@@ -1,0 +1,81 @@
+/**
+ * Correcciones específicas para problemas de visualización en dispositivos móviles
+ * Soluciona problemas con contenido invisible y animaciones
+ */
+
+/* Forzar visibilidad de contenido en dispositivos móviles independientemente de animaciones */
+@media screen and (max-width: 768px) {
+    /* Hacer que todos los elementos con scroll-reveal sean visibles inmediatamente en móviles */
+    .scroll-reveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
+    }
+    
+    /* Asegurar que las obras y su contenido sean visibles */
+    .work-item {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
+        display: block !important;
+    }
+    
+    /* Garantizar que las imágenes sean visibles */
+    .work-image, 
+    .featured-image img,
+    img.full-width-image {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Asegurar que la página de inicio muestre su contenido */
+    .home-content {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .intro-text {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    /* Mejoras para que las imágenes de obras se muestren correctamente */
+    .work-item img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: cover !important;
+        min-height: 200px !important;
+        background-color: #f5f5f5 !important; /* Color de fondo para placeholders */
+    }
+    
+    /* Asegurar que se muestre un fallback en caso de que la imagen no cargue */
+    .work-image:not([src]), 
+    .work-image[src=""], 
+    .work-image[src="undefined"] {
+        min-height: 200px !important;
+        background-color: #f5f5f5 !important;
+        background-image: url('../img/placeholders/placeholder.svg') !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+    
+    /* Hacer más visible la información de obras */
+    .work-info {
+        position: relative !important;
+        transform: none !important;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        padding: 10px !important;
+        margin-top: -4px !important;
+    }
+    
+    /* Asegurar que la página de inicio tenga contenido visible */
+    .home-content .featured-image,
+    .home-content .intro-text {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}

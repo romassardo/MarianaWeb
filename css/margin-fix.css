@@ -1,0 +1,66 @@
+/**
+ * Solución específica para el problema del margen derecho en móviles
+ * Esta corrección tiene la mayor especificidad posible para sobreescribir cualquier otro estilo
+ */
+
+/* Corrección exclusivamente para el margen derecho en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    /* Forzar que el contenedor ocupe el ancho completo con márgenes iguales */
+    body,
+    .container,
+    header,
+    main,
+    footer,
+    section,
+    article,
+    .obras-content,
+    .biography-content,
+    .home-content,
+    .influences-content,
+    .prensa-content,
+    .contact-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Eliminar cualquier scroll horizontal no deseado */
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Resetear cualquier propiedad de margen que pudiera estar causando el problema */
+    .work-item,
+    .press-item,
+    p, h1, h2, h3, h4, h5, h6,
+    .main-navigation,
+    .filters-container,
+    .works-grid,
+    .modal-content,
+    .site-title,
+    .site-subtitle,
+    .intro-text,
+    .featured-image {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Alineación específica para elementos internos */
+    .works-grid {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    /* Garantizar que textos no desborden */
+    p, .press-excerpt, .work-title, .modal-description {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}

@@ -1,0 +1,52 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Directorios de node modules y dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Archivos de construcción y cachés
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Archivos locales y temporales
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.log
+*.tmp
+
+# Archivos de IDE y editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# Archivo de configuración de deploy
+windsurf_deployment.yaml
+
+# Carpetas de Python (del script de extracción de imágenes)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+
+# Archivos grandes en Docs que no necesitamos en GitHub
+Docs/PRESENTACION*.pptx
+Docs/cloudflared-windows-amd64.exe
+Docs/*.pdf
+Docs/*.zip
+Docs/*.docx

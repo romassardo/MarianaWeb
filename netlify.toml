@@ -1,0 +1,24 @@
+[build]
+  publish = "/"
+  command = ""
+  ignore = "cp -r Docs Docs_backup && rm -rf Docs && echo 'Docs folder excluded'"
+
+[context.production]
+  ignore_warnings = true
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = true
+
+[build.processing.js]
+  bundle = false
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true

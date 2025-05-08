@@ -1,0 +1,9 @@
+.git
+.gitignore
+Docs\PRESENTACION MT 2020.pptx
+Docs\cloudflared-windows-amd64.exe
+Docs\Mariana Tirantte, escenógrafa argentina_.docx
+Docs\Mariana Tirantte, escenógrafa argentina_.pdf
+Docs\Mariana Tirantte, escenógrafa argentina_.zip
+node_modules
+exclude.txt

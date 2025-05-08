@@ -1,0 +1,213 @@
+/* 
+ * Estilos específicos para la sección de contacto de Mariana Tirantte
+ * Mejora la presentación del formulario y feedback visual
+ */
+
+/* Contenedor principal de contacto */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+/* Información de contacto */
+.contact-info {
+    padding-right: 2rem;
+}
+
+.contact-info h2 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+}
+
+.contact-info p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-email {
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin: 1.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+    color: var(--color-hover);
+}
+
+.contact-social,
+.contact-location {
+    margin-top: 2rem;
+}
+
+.contact-social h3,
+.contact-location h3 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.contact-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-social li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-social a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-social a:hover {
+    color: var(--color-accent);
+}
+
+.contact-location p {
+    margin-bottom: 0.5rem;
+}
+
+/* Formulario de contacto */
+.contact-form-container {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 4px;
+}
+
+.contact-form-container h3 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.form-input,
+.form-textarea {
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.form-button:hover {
+    background-color: #222;
+}
+
+.form-button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.form-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+/* Estilos para mensajes de error en el formulario */
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+    border-color: #e53935;
+}
+
+.error-message {
+    color: #e53935;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    font-size: 1.1rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}

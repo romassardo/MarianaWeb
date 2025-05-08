@@ -1,0 +1,228 @@
+/* 
+ * Estilos elegantes para el sistema de filtrado
+ * Diseño minimalista que complementa la estética del sitio
+ * Versión mejorada con transiciones más suaves y mejor UX
+ */
+
+.filters-container {
+    margin: 3rem 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.filters-container.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filters-container:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background-color: #111;
+}
+
+.filter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #111;
+    letter-spacing: 0.08em;
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+.filter-title span {
+    position: relative;
+}
+
+.filter-title span:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.filter-groups-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+}
+
+.filter-group label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.filter-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1.5rem 0.5rem 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #111;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23111111' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    transition: all 0.3s ease;
+    width: auto;
+    min-width: 110px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.filter-select:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+.filter-select.active-filter {
+    border-color: rgba(0, 0, 0, 0.8);
+    color: #000;
+    font-weight: 400;
+}
+
+.reset-button {
+    background-color: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(119, 119, 119, 0.6);
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 0;
+    opacity: 0.5;
+    transform: translateY(5px);
+}
+
+.reset-button:before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6 1V3M6 9V11M1 6H3M9 6H11M2.34315 2.34315L3.75736 3.75736M8.24264 8.24264L9.65685 9.65685M2.34315 9.65685L3.75736 8.24264M8.24264 3.75736L9.65685 2.34315' stroke='%23777777' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 6px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.reset-button.active {
+    color: #111;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reset-button.active:before {
+    opacity: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6 1V3M6 9V11M1 6H3M9 6H11M2.34315 2.34315L3.75736 3.75736M8.24264 8.24264L9.65685 9.65685M2.34315 9.65685L3.75736 8.24264M8.24264 3.75736L9.65685 2.34315' stroke='%23111111' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.reset-button:hover {
+    color: #000;
+}
+
+.reset-button:hover:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M6 1V3M6 9V11M1 6H3M9 6H11M2.34315 2.34315L3.75736 3.75736M8.24264 8.24264L9.65685 9.65685M2.34315 9.65685L3.75736 8.24264M8.24264 3.75736L9.65685 2.34315' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    opacity: 1;
+}
+
+.results-counter {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #999;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+}
+
+.results-counter span {
+    font-weight: 400;
+    color: #555;
+}
+
+.results-counter.updated {
+    color: #111;
+    transform: translateX(3px);
+}
+
+.results-counter.updated span {
+    color: #000;
+}
+
+/* Estilos para los elementos de la obra para animar cuando se filtran */
+.work-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Animaciones para cuando cambia la visibilidad */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .filters-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .reset-button {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}

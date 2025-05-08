@@ -1,0 +1,175 @@
+/**
+ * Animaciones refinadas para el sitio web de Mariana Tirantte
+ * Inspiradas en el estilo visual limpio y elegante de referencia
+ */
+
+/* Base para elementos con animación al scroll */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaciones específicas para diferentes tipos de contenido */
+.image-revealed {
+    transition-duration: 1.2s !important;
+}
+
+.text-revealed {
+    transition-delay: 0.1s !important;
+}
+
+/* Animaciones para la galería de obras */
+.work-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.3s ease;
+    will-change: opacity, transform;
+}
+
+.work-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Transición para las imágenes dentro de las obras */
+.work-item img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.work-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Animaciones para los modales y detalles de obras */
+.work-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.work-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.work-modal.open .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Animaciones para filtros */
+.filter-select {
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.filter-select:focus,
+.filter-select.active-filter {
+    transform: translateY(-2px);
+}
+
+.no-results-message {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.no-results-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación para elementos ocultos por filtros */
+.work-item.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    transition: opacity 0.4s ease, 
+                transform 0.4s ease,
+                height 0.4s ease,
+                margin 0.4s ease,
+                padding 0.4s ease;
+    overflow: hidden;
+}
+
+/* Animaciones para efectos hover en la navegación */
+.main-navigation a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-navigation a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.main-navigation a:hover:after,
+.main-navigation a.active:after {
+    width: 100%;
+}
+
+/* Efecto de desvanecimiento para textos e imágenes */
+.fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación sutil para el logotipo y título del sitio */
+.site-title {
+    transition: transform 0.5s ease;
+}
+
+.site-title:hover {
+    transform: translateX(3px);
+}
+
+/* Animaciones para imágenes de galería */
+.bio-image-container img,
+.featured-image img {
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1.2);
+    will-change: transform;
+}
+
+.bio-image-container:hover img,
+.featured-image:hover img {
+    transform: scale(1.02);
+}

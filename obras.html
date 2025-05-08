@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras - Mariana Tirante</title>
+    <meta name="description" content="Catálogo de trabajos escenográficos de Mariana Tirante, mostrando su trayectoria en el diseño escénico para teatro contemporáneo">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/placeholder.css">
+    <link rel="stylesheet" href="css/additions.css">
+    <link rel="stylesheet" href="css/sidebar-layout.css">
+    <link rel="stylesheet" href="css/minimal-style.css">
+    <link rel="stylesheet" href="css/filtros-elegantes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1 class="site-title">Mariana Tirante</h1>
+                <p class="site-subtitle">escenógrafa argentina</p>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="biografia.html">Biografía</a></li>
+                    <li><a href="obras.html" class="active">Obras</a></li>
+                    <li><a href="influencias.html">Influencias</a></li>
+                    <li><a href="prensa.html">Prensa</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="works-content">
+            <h2 class="scroll-reveal">Obras destacadas</h2>
+            <p class="scroll-reveal">Un recorrido por los principales trabajos escenográficos realizados para producciones teatrales</p>
+            
+            <div class="works-grid" id="obras-gallery">
+                <!-- Las obras se cargarán dinámicamente desde el JS -->
+            </div>
+
+            <!-- Modal para detalles de obra -->
+            <div class="work-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-body">
+                        <div class="modal-images">
+                            <!-- Las imágenes se cargarán dinámicamente -->
+                        </div>
+                        <div class="modal-info">
+                            <h2 class="modal-title"></h2>
+                            <p class="modal-year"></p>
+                            <p class="modal-theater"></p>
+                            <p class="modal-director"></p>
+                            <div class="modal-description"></div>
+                            <p class="modal-colaboradores"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Mariana Tirante - Todos los derechos reservados</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">Behance</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/obras-data-completo.js"></script>
+    <script src="js/filtros-obras.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Cargar dinámicamente todas las obras
+        document.addEventListener('DOMContentLoaded', function() {
+            const galeria = document.getElementById('obras-gallery');
+            
+            // Crear elementos para cada obra
+            obrasData.forEach((obra, index) => {
+                const workItem = document.createElement('div');
+                workItem.className = 'work-item scroll-reveal';
+                workItem.setAttribute('data-id', obra.id);
+                
+                // Usar la primera imagen de cada obra
+                const imgSrc = obra.imagenes && obra.imagenes.length > 0 ? obra.imagenes[0] : 'img/placeholders/placeholder.svg';
+                
+                workItem.innerHTML = `
+                    <img src="${imgSrc}" alt="${obra.titulo} - ${obra.año}" class="work-image">
+                    <div class="work-info">
+                        <h3 class="work-title">${obra.titulo}</h3>
+                        <p class="work-year">${obra.año} • ${obra.teatro}</p>
+                    </div>
+                `;
+                
+                galeria.appendChild(workItem);
+            });
+            
+            // Inicializar interacciones después de crear las obras
+            initGalleryInteractions();
+            
+            // Activar animaciones de scroll reveal
+            handleScrollAnimations();
+        });
+    </script>
+</body>
+</html>

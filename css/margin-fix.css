@@ -21,8 +21,8 @@
     .contact-content {
         width: 100% !important;
         max-width: 100% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
         margin-left: auto !important;
         margin-right: auto !important;
         box-sizing: border-box !important;
@@ -62,5 +62,26 @@
     p, .press-excerpt, .work-title, .modal-description {
         width: 100% !important;
         box-sizing: border-box !important;
+    }
+    
+    /* Eliminar línea en opciones del menú de navegación */
+    .main-navigation ul {
+        border-bottom: none !important;
+    }
+    
+    .main-navigation li {
+        border-bottom: none !important;
+    }
+    
+    .main-navigation a {
+        border-bottom: none !important;
+        text-decoration: none !important;
+    }
+    
+    /* Eliminar cualquier subrayado o borde que cause líneas */
+    nav, .main-navigation, .main-navigation * {
+        box-shadow: none !important;
+        border-top: none !important;
+        border-bottom: none !important;
     }
 }

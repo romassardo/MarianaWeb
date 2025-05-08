@@ -1,10 +1,48 @@
 /**
  * Correcciones específicas para problemas de visualización en dispositivos móviles
- * Soluciona problemas con contenido invisible y animaciones
+ * Soluciona problemas con contenido invisible, animaciones, márgenes y zoom
  */
 
-/* Forzar visibilidad de contenido en dispositivos móviles independientemente de animaciones */
+/* Corrección de zoom inicial en toda la página */
+html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Configuración específica para viewport en móviles */
 @media screen and (max-width: 768px) {
+    /* Asegurar que no hay zoom inicial */
+    html {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        touch-action: manipulation;
+    }
+    
+    /* Asegurar márgenes simétricos y correctos */
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Configuración de contenedor principal con márgenes simétricos */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Corrección de scroll horizontal no deseado */
+    .container > * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Forzar visibilidad de contenido en dispositivos móviles independientemente de animaciones */
     /* Hacer que todos los elementos con scroll-reveal sean visibles inmediatamente en móviles */
     .scroll-reveal {
         opacity: 1 !important;

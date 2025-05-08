@@ -1,0 +1,192 @@
+/**
+ * Mejoras para experiencia móvil - Sitio web Mariana Tirantte
+ * Soluciona problemas de márgenes y visualización en dispositivos pequeños
+ */
+
+/* Mejora de márgenes generales para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        padding: 12px 18px !important;
+        width: calc(100% - 36px) !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    
+    /* Ajustes para el encabezado */
+    header {
+        padding: 15px 0;
+    }
+    
+    .header-content {
+        margin-bottom: 15px;
+    }
+    
+    /* Mejoras para la navegación */
+    .main-navigation ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    
+    .main-navigation li {
+        margin: 0;
+    }
+    
+    /* Ajustes para la página de prensa */
+    .prensa-content,
+    .works-content,
+    .biography-content,
+    .influences-content,
+    .contact-content,
+    .home-content {
+        padding: 15px 0;
+    }
+    
+    /* Ajustes específicos para elementos de texto */
+    p, h1, h2, h3, .press-item, .filter-group {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Mejoras para categorías de prensa */
+    .press-categories {
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .category-button {
+        margin: 0;
+        padding: 8px 15px;
+    }
+    
+    /* Mejora específica para la página de inicio */
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    
+    .featured-image {
+        margin-bottom: 25px;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .featured-image img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .intro-text {
+        padding: 0;
+    }
+    
+    .intro-text p {
+        margin-bottom: 15px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    /* Mejoras para la sección de filtros */
+    .filters-container {
+        padding: 10px 0 20px;
+        margin: 15px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-groups-wrapper {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .filter-group {
+        margin-bottom: 10px;
+        min-width: 140px;
+    }
+    
+    .reset-button {
+        margin-top: 15px;
+        align-self: flex-start;
+    }
+    
+    /* Ajuste para galerías y grids de obras */
+    .works-grid {
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    
+    @media screen and (min-width: 480px) {
+        .works-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    /* Ajuste para modales */
+    .modal-content {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        max-height: calc(100vh - 40px);
+    }
+    
+    .modal-body {
+        flex-direction: column;
+    }
+    
+    .modal-images {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .modal-info {
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* Ajustes para el footer */
+    footer {
+        padding: 15px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .social-links {
+        margin-top: 10px;
+    }
+}
+
+/* Ajustes específicos para teléfonos muy pequeños */
+@media screen and (max-width: 360px) {
+    .container {
+        padding: 10px 15px !important;
+        width: calc(100% - 30px) !important;
+    }
+    
+    .main-navigation ul {
+        gap: 10px;
+    }
+    
+    .site-title {
+        font-size: 24px;
+    }
+    
+    .site-subtitle {
+        font-size: 14px;
+    }
+}
